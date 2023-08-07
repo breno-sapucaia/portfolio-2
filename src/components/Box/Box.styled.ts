@@ -1,5 +1,4 @@
 import { styled } from 'styled-components';
-import { space, color, layout, flexbox, border, background, position, grid, shadow } from 'styled-system';
 import {
   SpaceProps,
   ColorProps,
@@ -10,6 +9,15 @@ import {
   PositionProps,
   GridProps,
   ShadowProps,
+  space,
+  color,
+  layout,
+  flexbox,
+  border,
+  background,
+  position,
+  grid,
+  shadow,
 } from 'styled-system';
 
 export type BoxStyles = SpaceProps &
@@ -22,4 +30,14 @@ export type BoxStyles = SpaceProps &
   GridProps &
   ShadowProps;
 
-export const Box = styled.div<BoxStyles>``;
+export const Box = styled.div<BoxStyles>`
+  ${space}
+  ${color}
+  ${flexbox}
+  ${layout}
+  ${border}
+  ${background}
+  ${position}
+  ${grid}
+  ${shadow}
+`;

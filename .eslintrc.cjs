@@ -3,6 +3,9 @@ module.exports = {
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:import/recommended',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:import/typescript',
     'plugin:@typescript-eslint/recommended',
     'eslint-config-prettier',
     'plugin:storybook/recommended',
@@ -14,10 +17,7 @@ module.exports = {
     },
     // Tells eslint how to resolve imports
     'import/resolver': {
-      node: {
-        paths: ['src'],
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      },
+      typescript: {},
     },
   },
   rules: {
