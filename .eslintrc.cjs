@@ -1,10 +1,11 @@
-module.exports = {
+/**
+ * @type {import("eslint").Linter.Config}
+ */
+const config = {
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:import/recommended',
-    'plugin:import/errors',
-    'plugin:import/warnings',
     'plugin:import/typescript',
     'plugin:@typescript-eslint/recommended',
     'eslint-config-prettier',
@@ -16,8 +17,11 @@ module.exports = {
       version: 'detect',
     },
     // Tells eslint how to resolve imports
+    'import/core-modules': ['react', 'react-dom/client'],
     'import/resolver': {
-      typescript: {},
+      typescript: {
+
+      },
     },
   },
   rules: {
@@ -25,3 +29,5 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 'warn',
   },
 };
+
+module.exports = config

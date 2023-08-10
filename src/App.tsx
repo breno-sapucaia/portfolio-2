@@ -1,11 +1,19 @@
 import { Header } from '@/components/';
-import GlobalStyle from '@/theme/global';
+
+import { StyleSheetManager, ThemeProvider } from 'styled-components';
+import { theme as Theme, global as GlobalStyle } from '@/theme';
+import isPropValid from '@emotion/is-prop-valid';
+
 function App() {
   return (
-    <div>
-      <GlobalStyle />
-      <Header />
-    </div>
+    <StyleSheetManager shouldForwardProp={isPropValid}>
+      <ThemeProvider theme={Theme}>
+        <div>
+          <GlobalStyle />
+          <Header />
+        </div>
+      </ThemeProvider>
+    </StyleSheetManager>
   );
 }
 

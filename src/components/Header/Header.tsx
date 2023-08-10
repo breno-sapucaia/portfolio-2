@@ -1,11 +1,14 @@
 import { Box } from '@/components';
-
+import { ReactComponent as Logo } from '@/assets/logo.svg';
+import { useTheme } from 'styled-components';
 interface HeaderProps {}
 
-const Header = () => {
+const Header = (props: HeaderProps) => {
+  const { breakpoints } = useTheme();
   return (
-    <Box display="flex" backgroundColor={'cyan'} height={'48px'}>
-      Hello box with styled-components and system-styled
+    <Box display="flex" height={'48px'} maxWidth={breakpoints.lg} margin={'0 auto'}>
+      <Logo />
+      <Box display="flex"></Box>
     </Box>
   );
 };

@@ -30,14 +30,14 @@ export type BoxStyles = SpaceProps &
   GridProps &
   ShadowProps;
 
-export const Box = styled.div<BoxStyles>`
-  ${space}
+export const Box = styled('div')<BoxStyles>`
   ${color}
-  ${flexbox}
   ${layout}
+  ${space}
+  ${flexbox}
+  ${position}
   ${border}
   ${background}
-  ${position}
   ${grid}
   ${shadow}
 `;
