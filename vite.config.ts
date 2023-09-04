@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 import svgr from 'vite-plugin-svgr';
 
 import path from 'path';
@@ -11,5 +10,5 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src/'),
     },
   },
-  plugins: [react(), vanillaExtractPlugin(), svgr()],
+  plugins: [react(), svgr()],
 });

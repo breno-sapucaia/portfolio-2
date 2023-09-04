@@ -1,19 +1,18 @@
-import { Header } from '@/components/';
+import { About, Header } from '@/components/';
 
-import { StyleSheetManager, ThemeProvider } from 'styled-components';
-import { theme as Theme, global as GlobalStyle } from '@/theme';
-import isPropValid from '@emotion/is-prop-valid';
+import { ColorModeProvider, Preflight, ThemeProvider } from '@xstyled/styled-components';
+import { theme, global as GlobalStyles } from '@/theme';
 
 function App() {
   return (
-    <StyleSheetManager shouldForwardProp={isPropValid}>
-      <ThemeProvider theme={Theme}>
-        <div>
-          <GlobalStyle />
-          <Header />
-        </div>
-      </ThemeProvider>
-    </StyleSheetManager>
+    <ThemeProvider theme={theme}>
+      <div>
+        <Preflight />
+        {/* <GlobalStyles /> */}
+        <Header />
+        <About />
+      </div>
+    </ThemeProvider>
   );
 }
 

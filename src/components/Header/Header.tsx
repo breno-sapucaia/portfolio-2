@@ -1,15 +1,24 @@
-import { Box } from '@/components';
-import { ReactComponent as Logo } from '@/assets/logo.svg';
-import { useTheme } from 'styled-components';
+import { ReactComponent as Logo } from '@/assets/icons/logo.svg';
+import { x } from '@xstyled/styled-components';
+import { Button } from '@/components';
 interface HeaderProps {}
 
-const Header = (props: HeaderProps) => {
-  const { breakpoints } = useTheme();
+const Header = ({}: HeaderProps) => {
   return (
-    <Box display="flex" height={'48px'} maxWidth={breakpoints.lg} margin={'0 auto'}>
+    <x.div
+      display="flex"
+      height={'48px'}
+      container={{ md: true }}
+      margin={'0 auto'}
+      justifyContent="space-between"
+      mt={'4.5rem'}
+    >
       <Logo />
-      <Box display="flex"></Box>
-    </Box>
+      <x.div display="flex" gap={'1rem'}>
+        <Button variant="default">Get in touch</Button>
+        <Button variant="contained">My curriculum</Button>
+      </x.div>
+    </x.div>
   );
 };
 export default Header;
